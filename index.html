@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="container">
+    <div class="top">
+        <h1>Password Generator</h1>
+        <button id="mode-change">Dark mode</button>
+    </div>
+    <div class="body">
+      <div class="line">
+        <h4 class="length-text">Length</h4>
+        <input type="range" class="pas-length-slider" id="pas-lenth-range"step="1" min="4" max="30" value="8">
+        <input type="number" class="pas-length" id="pas-length"  step="1" min="4" max="30" value="8" >
+      </div>
+      <div class="line">
+        <h4 class="length-text">Lowercase</h4>
+        <label class="boxes">
+          <input type="checkbox" id="lowercase-toggle"  onchange="toggleValueChange('lowercase')">
+          <span class="check-slider"></span>
+        </label>
+      </div>
+      <div class="line">
+        <h4 class="length-text">Uppercase</h4>
+        <label class="boxes">
+          <input type="checkbox" onchange="toggleValueChange('uppercase')">
+          <span class="check-slider"></span>
+        </label>
+      </div>
+      <div class="line">
+        <h4 class="length-text">Symbols</h4>
+        <label class="boxes">
+          <input type="checkbox" onchange="toggleValueChange('symbol')">
+          <span class="check-slider"></span>
+        </label>
+      </div>
+      <div class="line">
+        <h4 class="length-text">Numbers</h4>
+        <label class="boxes">
+          <input type="checkbox" onchange="toggleValueChange('number')">
+          <span class="check-slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <button class="generate-btn" onclick="generatePassword()">
+            GENERATE PASSWORD
+        </button>
+      </div>
+      <div class="row">
+          <div class="display-password" id="pass-display" onclick="copyPassword()">
+              <p id="password-text">b</p>
+          </div>
+      </div>
+      <div class="row">
+          <p id="copied-notify-text">Copied!</p>
+      </div>
+    </div>
+  </div>
+    <script src="script.js"></script>
+  </body>
+</html>
